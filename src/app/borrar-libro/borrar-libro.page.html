@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>borrarLibro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-card>
+  <ion-card-header>
+    Desea devolver el libro
+  </ion-card-header>
+  <ion-button (click)="borrarLibro()" [routerLink]="['/mis-prestamos-page/']">
+    Si
+  </ion-button>
+  <ion-button rou>
+    No
+  </ion-button>
+ </ion-card>
+</ion-content>

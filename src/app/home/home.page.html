@@ -1,8 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-segment value="Login" > 
+      <ion-segment-button value="Login" [routerLink]="['/home/']">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Catalogo" [routerLink]="['/catalogo-page/']">
+        <ion-label>Catalogo</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="Mis prestamos" [routerLink]="['/mis-prestamos-page/']">
+        <ion-label>Mis prestamos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +22,25 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container" *ngIf="mostrarElemento">
+    <form>
+      <h1> Iniciar sesion </h1>
+
+      <ion-input type="email" placeholder="email"
+        [formControl] ="formu.controls.email"></ion-input>
+    
+      <ion-input type="text" placeholder="contraseña"
+        [formControl] ="formu.controls.pass"></ion-input> 
+
+      <ion-button type="submit" expand="block" fill="clear" shape="round" (click)="mostrar()">
+        Enviar
+      </ion-button>
+    </form>
   </div>
+  
+  <div *ngIf="!mostrarElemento">
+    <p>Bienvenido {{formu.value.email}}</p>
+  </div>
+  
+
 </ion-content>

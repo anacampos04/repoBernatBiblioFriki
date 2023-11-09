@@ -327,4 +327,12 @@ export class ServCatalogoService {
   getAll(){
     return this.catalogo;
   } 
+
+  get(id: number):any{
+    return this.catalogo.find((c) => c.id === id);
+    
+    }
+
+
+
 }

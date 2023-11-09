@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{libro.titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img alt="Silhouette of mountains" src="./../../assets/covers/{{libro.isbn}}.jpg" />
+    <ion-card-header>
+      <ion-card-title>{{libro.titulo}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>{{libro.isbn}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{libro.autores}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{libro.editorial}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{libro.fecha}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{libro.descripcion}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-button fill="clear"(click)="alquilarLibro()" [routerLink]="['/mis-prestamos-page/', libro.id]"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+  </ion-card>
+</ion-content>
